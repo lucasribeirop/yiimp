@@ -29,6 +29,7 @@ function yaamp_get_algos()
         'exosis',
         'groestl', // dmd-gr -m 256 (deprecated)
         'geek',
+		'gr',
         'hex',
         'hmq1725',
         'honeycomb',
@@ -123,6 +124,8 @@ function yaamp_algo_mBTC_factor($algo)
         case 'keccak':
         case 'keccakc':
         case 'lbry':
+		case 'gr':
+			return 0.001;
         case 'vanilla':
             return 1000;
         default:
@@ -148,6 +151,7 @@ function yaamp_get_algo_norm($algo)
         'lyra2' => 1.0,
         'lyra2v2' => 1.0,
         'lyra2v3' => 1.0,
+		'gr' => 0.001,
         'myr-gr' => 1.0,
         'neoscrypt' => 1.0,
         'nist5' => 1.0,
@@ -202,6 +206,7 @@ function getAlgoColors($algo)
         'dmd-gr' => '#a0c0f0',
         'exosis' => '#49CCFE',
         'geek' => '#d0a0a0',
+		'gr' => '#80a0d0',
         'groestl' => '#d0a0a0',
         'hex' => '#c0f0c0',
         'hmq1725' => '#ffa0a0',
@@ -316,6 +321,7 @@ function getAlgoPort($algo)
         'dmd-gr' => 5333,
         'exosis' => 3557,
         'geek' => 3692,
+		'gr' => 7070,
         'hex' => 5135,
         'hmq1725' => 3747,
         'honeycomb' => 7777,
